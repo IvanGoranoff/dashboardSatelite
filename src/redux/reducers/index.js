@@ -27,6 +27,12 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 powerData: { ...state.powerData, current: action.payload }
             };
+        case 'REMOVE_NOTIFICATION':
+            return {
+                ...state,
+                notifications: state.notifications.filter((_, index) => index !== action.payload)
+            };
+
         case 'ADD_NOTIFICATION':
             return {
                 ...state,

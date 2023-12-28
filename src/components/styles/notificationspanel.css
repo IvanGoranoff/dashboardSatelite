@@ -12,4 +12,53 @@
   .notifications-panel p {
     margin: 10px 0;
   }
+
   
+  .notification.warning {
+    background-color: #ffcc00;
+    color: #333;
+  }
+  
+  .notification.error {
+    background-color: #ff4444;
+    color: white;
+  }
+  
+  .notification.info {
+    background-color: #33b5e5;
+    color: white;
+  }
+  .notification {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.notification .close-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0 8px;
+    color: #666;
+}
+
+.notification .close-btn:hover {
+    color: #000;
+}  
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

@@ -25,3 +25,9 @@ export const addNotification = (notification) => {
         payload: notification
     };
 };
+export const removeNotification = (index) => {
+    return {
+        type: 'REMOVE_NOTIFICATION',
+        payload: index
+    };
+};
