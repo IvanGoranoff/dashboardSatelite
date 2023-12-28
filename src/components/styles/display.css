@@ -5,16 +5,35 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
     text-align: left;
-  }
-  
-  .display h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.display h2 {
     color: #333;
     margin-bottom: 15px;
-  }
-  
-  .display p {
+}
+
+.display p {
     color: #666;
     font-size: 16px;
     margin: 5px 0;
-  }
-  
+}
+
+/* Add styles for the meter element */
+.meter {
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* Additional styles for better visual distinction of different sections */
+.voltage-display, .current-display {
+    margin-bottom: 10px;
+}
+
+/* Styling for labels */
+.label {
+    font-weight: bold;
+}

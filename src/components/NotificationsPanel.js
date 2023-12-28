@@ -13,7 +13,7 @@ function NotificationsPanel() {
 
     return (
         <div className="notifications-panel">
-            <h2>Известия</h2>
+            <h2>Notifications</h2>
             {notifications.map((note, index) => (
                 <div key={index} className={`notification ${note.type}`}>
                     <span>{note.message}</span>

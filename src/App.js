@@ -27,13 +27,13 @@ function App() {
 
             // Проверка за предупреждения
             if (newVoltage < 18) {
-                dispatch(addNotification({ type: 'warning', message: `Ниско напрежение на батерията! [${timestamp}, Модул: ${moduleId}]` }));
+                dispatch(addNotification({ type: 'warning', message: `"Low battery voltage! [${timestamp}, Module: ${moduleId}]"` }));
             } else if (newVoltage > 30) {
-                dispatch(addNotification({ type: 'error', message: `Високо напрежение! [${timestamp}, Модул: ${moduleId}]` }));
+                dispatch(addNotification({ type: 'error', message: `"High voltage! [${timestamp}, Module: ${moduleId}]"` }));
             }
 
             if (newCurrent > 2.5) {
-                dispatch(addNotification({ type: 'error', message: `Висок ток на устройството! [${timestamp}, Модул: ${moduleId}]` }));
+                dispatch(addNotification({ type: 'error', message: `"High current on the device! [${timestamp}, Module: ${moduleId}]"` }));
             }
         }, 5000); // Обновява се на всеки 5 секунди
 
@@ -44,9 +44,14 @@ function App() {
 
     return (
         <div className="App">
-            <Display />
-            <CommandPanel />
-            <NotificationsPanel />
+            <header className="App-header">
+                <h1>Satellite Control Panel</h1>
+            </header>
+            <main className="App-content">
+                <Display />
+                <CommandPanel />
+                <NotificationsPanel />
+            </main>
         </div>
     );
 }
