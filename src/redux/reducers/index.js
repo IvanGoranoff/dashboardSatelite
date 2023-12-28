@@ -1,13 +1,37 @@
 const initialState = {
     powerData: { voltage: 0, current: 0 },
-    notifications: []
+    notifications: [],
+    devicesStatus: {
+        obc: true, // По подразбиране включен
+        camera: true // По подразбиране  включена
+    }
 };
 
 function rootReducer(state = initialState, action) {
     switch (action.type) {
         case 'TOGGLE_POWER':
-            // Implement logic here
-            return state;
+            return {
+                ...state,
+                devicesStatus: {
+                    ...state.devicesStatus,
+                    [action.payload]: !state.devicesStatus[action.payload]
+                }
+            };
+        case 'UPDATE_VOLTAGE':
+            return {
+                ...state,
+                powerData: { ...state.powerData, voltage: action.payload }
+            };
+        case 'UPDATE_CURRENT':
+            return {
+                ...state,
+                powerData: { ...state.powerData, current: action.payload }
+            };
+        case 'ADD_NOTIFICATION':
+            return {
+                ...state,
+                notifications: [...state.notifications, action.payload]
+            };
         default:
             return state;
     }
