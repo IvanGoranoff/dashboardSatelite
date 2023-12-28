@@ -1,0 +1,15 @@
+.notifications-panel {
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    color: #856404;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    text-align: left;
+  }
+  
+  .notifications-panel p {
+    margin: 10px 0;
+  }
+  
